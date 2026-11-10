@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- Testi, numeri e immagini arrivano da src/data/creator.ts: non modificarli qui. -->
+    <title>%MK_TITLE%</title>
+    <meta name="description" content="%MK_DESCRIPTION%" />
+    <meta name="theme-color" content="#04060d" />
+    <meta name="color-scheme" content="dark" />
+    <style>html,body{background:#04060d;color:#eef1f8}</style>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="preload" as="image" href="images/davide-hero-1000.webp" imagesrcset="images/davide-hero-640.webp 640w, images/davide-hero-1000.webp 1000w" imagesizes="(min-width: 1024px) 40vw, 90vw" fetchpriority="high" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:site_name" content="%MK_NAME%" />
+    <meta property="og:title" content="%MK_TITLE%" />
+    <meta property="og:description" content="%MK_DESCRIPTION%" />
+    <meta property="og:image" content="%MK_OG_IMAGE%" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="%MK_OG_ALT%" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="%MK_TITLE%" />
+    <meta name="twitter:description" content="%MK_DESCRIPTION%" />
+    <meta name="twitter:image" content="%MK_OG_IMAGE%" />
+    <!--MK_HEAD-->
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding:24px;font-family:sans-serif">Davide Durazzi — media kit 2026. Per vederlo attiva JavaScript. Contatti: info@davidedurazzi.it</p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

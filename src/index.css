@@ -1,0 +1,186 @@
+@import 'tailwindcss';
+
+/*
+ * Palette ricavata dai CSS reali di davidedurazzi.it (variabili --bg, --scafo, --paper, --ink, --muted, --tesi, --anti, --live, --ok)
+ * e font Archivo + Source Serif 4, gli stessi del sito: il media kit resta nello stesso ecosistema visivo.
+ */
+@theme {
+  --color-bg: #04060d;
+  --color-scafo: #0a1022;
+  --color-paper: #0e1530;
+  --color-ink: #eef1f8;
+  --color-muted: #a3aecb;
+  --color-line: #1f2848;
+  --color-blue: #7b97ff;
+  --color-blue-deep: #2f55e4;
+  --color-orange: #ff8a4c;
+  --color-live: #ff4d61;
+  --color-ok: #4fd39a;
+
+  --font-sans: 'Archivo Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Source Serif 4 Variable', Georgia, serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  @keyframes pulse-dot {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgb(79 211 154 / 0.5);
+    }
+    50% {
+      box-shadow: 0 0 0 7px rgb(79 211 154 / 0);
+    }
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    background: var(--color-bg);
+    overflow-x: clip;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-bg font-sans text-ink antialiased;
+    overflow-x: clip;
+    font-stretch: 100%;
+  }
+  ::selection {
+    background: rgb(123 151 255 / 0.35);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-orange);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+  .section {
+    @apply relative py-20 sm:py-28 lg:py-36;
+  }
+  /* Titoli: Archivo in larghezza espansa/condensata, peso forte. */
+  .h-display {
+    font-weight: 800;
+    font-stretch: 112%;
+    letter-spacing: -0.025em;
+    line-height: 0.98;
+  }
+  .h-section {
+    font-weight: 800;
+    font-stretch: 108%;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+    font-size: clamp(2rem, 5.2vw, 4rem);
+  }
+  .serif-i {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-stretch: 100%;
+    letter-spacing: -0.01em;
+  }
+  .kicker {
+    @apply flex items-center gap-3 text-[12px] font-bold tracking-[0.16em] text-blue uppercase;
+  }
+  .kicker::before {
+    content: '';
+    width: 28px;
+    height: 2px;
+    background: var(--color-orange);
+  }
+  .panel {
+    @apply relative rounded-[22px] border border-line;
+    background: linear-gradient(180deg, rgb(18 27 58 / 0.72), rgb(9 14 32 / 0.72));
+  }
+  .panel-hover {
+    transition:
+      border-color 0.35s var(--ease-out-expo),
+      transform 0.45s var(--ease-out-expo);
+  }
+  .panel-hover:hover,
+  .panel-hover:focus-within {
+    border-color: rgb(123 151 255 / 0.55);
+    transform: translateY(-3px);
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[15px] font-bold transition;
+    transition:
+      transform 0.3s var(--ease-out-expo),
+      background-color 0.25s,
+      border-color 0.25s;
+  }
+  .btn:active {
+    transform: scale(0.97);
+  }
+  .btn-primary {
+    background: var(--color-blue);
+    color: var(--color-bg);
+  }
+  .btn-primary:hover {
+    background: #9bb0ff;
+    transform: translateY(-2px);
+  }
+  .btn-ghost {
+    border: 1px solid var(--color-line);
+    color: var(--color-ink);
+  }
+  .btn-ghost:hover {
+    border-color: var(--color-blue);
+    transform: translateY(-2px);
+  }
+  /* Griglia tecnica di sfondo, solo decorativa. */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgb(150 170 255 / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(150 170 255 / 0.07) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+}
+
+.skip-link {
+  position: fixed;
+  left: 12px;
+  top: 12px;
+  z-index: 100;
+  transform: translateY(-200%);
+  background: var(--color-blue);
+  color: var(--color-bg);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.skip-link:focus {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none !important;
+  }
+}
