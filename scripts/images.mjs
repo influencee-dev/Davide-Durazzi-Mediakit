@@ -8,9 +8,9 @@ await Promise.all([
   w('supra.jpg', 'cover-supra.webp', { width: 600, height: 800 }),
   w('m60.jpg', 'cover-m60.webp', { width: 600, height: 600 }),
   sharp(D + 'logo.png').resize(800, 800).webp({ quality: 90 }).toFile(O + 'logo-800.webp'),
-  // Chi è: ritratto verticale 4:5
-  w('02-auto.jpg', 'davide-auto-560.webp', { width: 560, height: 700, position: 'attention' }),
-  w('02-auto.jpg', 'davide-auto-900.webp', { width: 900, height: 1125, position: 'attention' }),
+  // Chi è: Davide che ride nella piscina di palline, 4:5
+  w('03-piscina.jpg', 'davide-chi-e-560.webp', { width: 560, height: 700, position: 'top' }),
+  w('03-piscina.jpg', 'davide-chi-e-900.webp', { width: 900, height: 1125, position: 'top' }),
 ]);
 await sharp(D + 'logo.png').resize(192, 192).png().toFile(O + 'logo-192.png');
 await sharp(D + 'logo.png').resize(512, 512).png().toFile('public/favicon.png');

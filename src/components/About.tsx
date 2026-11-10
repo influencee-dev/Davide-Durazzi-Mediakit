@@ -16,13 +16,13 @@ export function About() {
             <div className="relative mx-auto max-w-[420px] lg:sticky lg:top-28">
               <div className="overflow-hidden rounded-[28px] border border-line">
                 <img
-                  src="images/davide-auto-900.webp"
-                  srcSet="images/davide-auto-560.webp 560w, images/davide-auto-900.webp 900w"
+                  src="images/davide-chi-e-900.webp"
+                  srcSet="images/davide-chi-e-560.webp 560w, images/davide-chi-e-900.webp 900w"
                   sizes="(min-width: 1024px) 34vw, 90vw"
                   width={900}
                   height={1125}
                   loading="lazy"
-                  alt="Davide Durazzi in auto, ripreso dal basso, con occhiali scuri e giacca"
+                  alt="Davide Durazzi che ride, sdraiato in una piscina di palline azzurre"
                   className="aspect-[4/5] w-full object-cover"
                 />
               </div>
