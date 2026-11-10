@@ -52,7 +52,7 @@ export function Numbers() {
         <SectionHead
           id="numeri-titolo"
           kicker="I numeri"
-          lines={['Dati veri,', <span key="b" className="serif-i text-blue">piattaforma per piattaforma.</span>]}
+          lines={['Dati veri,', <span key="b" className="accent-font text-blue">piattaforma per piattaforma.</span>]}
           intro={`Ogni cifra arriva dagli strumenti ufficiali delle piattaforme, con periodo e fonte. Non sommo audience diverse per fare un numero più grande. Aggiornamento: ${formatDate(creator.updatedAt)}.`}
         />
 
@@ -120,37 +120,51 @@ export function Numbers() {
 
         {/* Contenuti con più visualizzazioni */}
         <Reveal className="panel mt-6 p-7 sm:p-9">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <h3 className="text-2xl font-extrabold tracking-tight">I contenuti che hanno funzionato</h3>
-              <p className="mt-2 max-w-2xl text-muted">Dati per singolo contenuto, come mostrati da TikTok Studio e YouTube. Le piattaforme non sono confrontabili tra loro: ognuna ha il suo periodo.</p>
-            </div>
+          <h3 className="text-2xl font-extrabold tracking-tight">I contenuti che hanno funzionato</h3>
+          <p className="mt-2 max-w-2xl text-muted">Dati per singolo contenuto, come mostrati da TikTok Studio e YouTube. Le piattaforme non sono confrontabili tra loro: ognuna ha il suo periodo.</p>
+          <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_250px] lg:gap-10">
+            <ul className="grid content-start gap-4">
+              {creator.topContent.map((t) => (
+                <li key={t.title}>
+                  <a href={t.url} target="_blank" rel="noopener noreferrer" className="group block rounded-xl p-2 transition-colors hover:bg-paper">
+                    <div className="mb-2 flex items-center justify-between gap-4">
+                      <span className="flex min-w-0 items-center gap-2.5 font-bold">
+                        <PlatformIcon id={t.platform} className="h-4 w-4 shrink-0 text-blue" />
+                        <span className="truncate">{t.title}</span>
+                        <span className="hidden shrink-0 text-xs font-medium text-muted md:inline">· {t.note}</span>
+                      </span>
+                      <span className="shrink-0 font-extrabold tabular-nums">{t.views >= 100000 || t.views % 1000 === 0 ? fmtShort(t.views) : fmt(t.views)}</span>
+                    </div>
+                    <BarRow label="" bare value={t.views} max={maxViews} display="" accent={t.platform === 'tiktok' ? 'bg-orange' : 'bg-blue'} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a
+              href={creator.topContent[0].url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative mx-auto block w-full max-w-[250px] self-start overflow-hidden rounded-2xl border border-line bg-paper transition-colors hover:border-blue lg:mx-0"
+            >
+              <img
+                src="images/cover-tiktok-top.webp"
+                width={432}
+                height={574}
+                loading="lazy"
+                alt={`Copertina del video TikTok ${creator.topContent[0].title}`}
+                className="aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              />
+              <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/10 to-transparent" />
+              <span className="absolute inset-x-0 bottom-0 p-4">
+                <span className="flex items-center gap-2 text-[11px] font-bold tracking-wider text-muted uppercase">
+                  <PlatformIcon id="tiktok" className="h-3.5 w-3.5" /> Il più visto
+                </span>
+                <span className="mt-1 block text-3xl font-extrabold tracking-tight">{fmtShort(creator.topContent[0].views)}</span>
+                <span className="block text-xs text-muted">visualizzazioni · 60 giorni</span>
+              </span>
+            </a>
           </div>
-          <ul className="mt-8 grid gap-4">
-            {creator.topContent.map((t) => (
-              <li key={t.title}>
-                <a href={t.url} target="_blank" rel="noopener noreferrer" className="group block rounded-xl p-2 transition-colors hover:bg-paper">
-                  <div className="mb-2 flex items-center justify-between gap-4">
-                    <span className="flex min-w-0 items-center gap-2.5 font-bold">
-                      <PlatformIcon id={t.platform} className="h-4 w-4 shrink-0 text-blue" />
-                      <span className="truncate">{t.title}</span>
-                      <span className="hidden shrink-0 text-xs font-medium text-muted md:inline">· {t.note}</span>
-                    </span>
-                    <span className="shrink-0 font-extrabold tabular-nums">{t.views >= 100000 || t.views % 1000 === 0 ? fmtShort(t.views) : fmt(t.views)}</span>
-                  </div>
-                  <BarRow label="" bare value={t.views} max={maxViews} display="" accent={t.platform === 'tiktok' ? 'bg-orange' : 'bg-blue'} />
-                </a>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-6 rounded-xl border border-line bg-scafo p-4 text-sm leading-relaxed text-muted">
-            <strong className="text-ink">Da leggere con attenzione.</strong> {creator.tiktokNote.text} Per questo accanto al totale mostro anche il dettaglio per contenuto.
-          </p>
         </Reveal>
-
-        <p className="mt-8 max-w-3xl text-sm leading-relaxed text-muted">
-          Twitch non compare nelle statistiche: il canale è nuovo e ancora piccolo. Le dirette del martedì sono comunque parte dei formati di collaborazione.
-        </p>
       </div>
     </section>
   );

@@ -47,7 +47,7 @@ export function World() {
         <SectionHead
           id="mondo-titolo"
           kicker="Il mio mondo"
-          lines={['Un solo filo:', <span key="b" className="serif-i text-blue">provare la tecnologia.</span>]}
+          lines={['Un solo filo:', <span key="b" className="accent-font text-blue">provare la tecnologia.</span>]}
           intro="Intelligenza artificiale, gaming e motori non sono quattro canali separati: sono tre modi di guardare la stessa cosa, la tecnologia applicata a ciò che le persone usano e amano."
         />
         <Graph />
@@ -65,40 +65,35 @@ export function World() {
           <Reveal>
             <h3 className="text-2xl font-extrabold tracking-tight">Format e serie</h3>
           </Reveal>
-          <ul className="mt-6 grid gap-4 md:grid-cols-3">
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
             {w.series.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.1}>
-                <li className="panel h-full list-none p-6">
-                  <p className="text-sm font-bold text-blue">0{i + 1}</p>
-                  <h4 className="mt-3 text-xl font-extrabold">{s.title}</h4>
-                  <p className="mt-2 leading-relaxed text-muted">{s.text}</p>
-                  {'url' in s && s.url && (
-                    <a href={s.url} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-blue hover:underline">
-                      Guarda<span className="sr-only">: {s.title}</span> →
-                    </a>
-                  )}
-                </li>
-              </Reveal>
-            ))}
-          </ul>
-        </div>
-
-        <div className="mt-16">
-          <Reveal>
-            <h3 className="text-2xl font-extrabold tracking-tight">Come suona, in due clip</h3>
-            <p className="mt-2 max-w-2xl text-muted">Video verticali nel formato che Davide pubblica sui social. Premi play per sentire il tono.</p>
-          </Reveal>
-          <div className="mt-6 grid max-w-2xl grid-cols-2 gap-4">
-            {[1, 2].map((n) => (
-              <Reveal key={n} delay={n * 0.08}>
-                <video
-                  className="aspect-[9/16] w-full rounded-2xl border border-line bg-paper object-cover"
-                  controls
-                  preload="metadata"
-                  playsInline
-                  src={`video/clip-${n}.mp4`}
-                  aria-label={`Clip di esempio ${n} di Davide Durazzi`}
-                />
+                <a href={s.url} target="_blank" rel="noopener noreferrer" className="panel panel-hover group flex h-full flex-col overflow-hidden">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-paper">
+                    {s.cover ? (
+                      <img src={s.cover} width={600} height={800} loading="lazy" alt={`Copertina: ${s.title}`} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
+                    ) : (
+                      <svg viewBox="0 0 400 300" className="h-full w-full" aria-hidden="true" focusable="false">
+                        <rect width="400" height="300" fill="#0A1022" />
+                        <g stroke="#7B97FF" strokeOpacity=".5" strokeWidth="2" fill="none">
+                          <circle cx="200" cy="150" r="96" />
+                          <circle cx="200" cy="150" r="60" strokeDasharray="3 8" />
+                          <path d="M40 150h320M200 20v260" strokeOpacity=".2" />
+                        </g>
+                        <path d="M170 118l72 32-72 32z" fill="#FF8A4C" />
+                      </svg>
+                    )}
+                    <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-scafo/80 to-transparent" />
+                    <span className="absolute top-3 left-3 rounded-full bg-bg/80 px-3 py-1 text-xs font-bold text-blue backdrop-blur">0{i + 1}</span>
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h4 className="text-xl font-extrabold">{s.title}</h4>
+                    <p className="mt-2 leading-relaxed text-muted">{s.text}</p>
+                    <span className="mt-auto pt-5 text-[15px] font-bold text-blue">
+                      {s.label} <span aria-hidden="true">↗</span>
+                    </span>
+                  </div>
+                </a>
               </Reveal>
             ))}
           </div>

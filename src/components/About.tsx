@@ -26,7 +26,7 @@ export function About() {
                   className="aspect-[4/5] w-full object-cover"
                 />
               </div>
-              <p className="serif-i absolute -right-2 -bottom-6 max-w-[230px] rounded-2xl border border-line bg-paper p-5 text-xl leading-snug sm:-right-8">
+              <p className="accent-font absolute -right-2 -bottom-6 max-w-[230px] rounded-2xl border border-line bg-paper p-5 text-xl leading-snug sm:-right-8">
                 «Mi interessa capire come funzionano le cose.»
               </p>
             </div>
@@ -37,7 +37,7 @@ export function About() {
           <SectionHead
             id="chi-e-titolo"
             kicker="Chi è Davide"
-            lines={['Appassionato di tecnologia', <span key="b" className="serif-i text-blue">da sempre.</span>]}
+            lines={['Appassionato di tecnologia', <span key="b" className="accent-font text-blue">da sempre.</span>]}
           />
           <Reveal>
             <p className="max-w-2xl text-xl leading-relaxed text-ink/90">
@@ -47,7 +47,10 @@ export function About() {
               Il suo modo di comunicare è diretto e concreto: informa, spiega o intrattiene a seconda del contenuto, ma sempre con la sua voce. Usa l’AI per supportare il lavoro; la direzione editoriale e le decisioni restano sue.
             </p>
           </Reveal>
-          <ul className="mt-12 grid gap-4 sm:grid-cols-3">
+        </div>
+      </div>
+      <div className="wrap">
+          <ul className="mt-16 grid gap-4 sm:grid-cols-3">
             {TRAITS.map((t, i) => (
               <Reveal key={t.n} delay={i * 0.1} className="panel p-6">
                 <li className="list-none">
@@ -58,7 +61,6 @@ export function About() {
               </Reveal>
             ))}
           </ul>
-        </div>
       </div>
     </section>
   );

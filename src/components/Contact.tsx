@@ -37,7 +37,7 @@ export function Contact() {
           <p className="kicker justify-center">Contatti</p>
         </Reveal>
         <h2 id="contatti-titolo" className="h-display mx-auto mt-6 max-w-4xl text-[clamp(2.4rem,7vw,5.4rem)]">
-          Parliamo del tuo <span className="serif-i text-blue">progetto.</span>
+          Parliamo del tuo <span className="accent-font text-blue">progetto.</span>
         </h2>
         <Reveal delay={0.1}>
           <p className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-muted">{creator.contact.pitch}</p>
@@ -68,7 +68,14 @@ export function Contact() {
         </Reveal>
       </div>
       <footer className="wrap mt-24 flex flex-col gap-3 border-t border-line pt-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-        <p>© {new Date(creator.updatedAt).getFullYear()} Davide Durazzi · <a href={creator.website} className="hover:text-ink hover:underline">davidedurazzi.it</a></p>
+        <p>
+          Media kit realizzato da{' '}
+          <a href={creator.builder.url} target="_blank" rel="noopener noreferrer" className="font-bold text-ink underline-offset-4 hover:text-blue hover:underline">
+            {creator.builder.name}
+            <span className="sr-only"> (si apre in una nuova scheda)</span>
+          </a>{' '}
+          · {new Date(creator.updatedAt).getFullYear()}
+        </p>
         <p>Numeri aggiornati al {formatDate(creator.updatedAt)} · fonte: strumenti ufficiali delle piattaforme</p>
       </footer>
     </section>

@@ -10,7 +10,7 @@ export function Experience() {
         <SectionHead
           id="esp-titolo"
           kicker="Esperienze e progetti"
-          lines={['Non ne parla soltanto:', <span key="b" className="serif-i text-blue">li costruisce.</span>]}
+          lines={['Non ne parla soltanto:', <span key="b" className="accent-font text-blue">li costruisce.</span>]}
         />
 
         <div className="grid gap-4 lg:grid-cols-12">

@@ -34,6 +34,8 @@ export const creator = {
   email: 'info@davidedurazzi.it',
   emailSubject: 'Collaborazione',
   website: 'https://www.davidedurazzi.it',
+  /** Crediti nel footer: obbligatori in ogni media kit Influencee. */
+  builder: { name: 'Influencee', url: 'https://www.influencee.it' },
   /** Data (ISO) dell'ultimo aggiornamento dei numeri. */
   updatedAt: '2026-11-10',
 
@@ -116,13 +118,6 @@ export const creator = {
     },
   ],
 
-  /** Dati su una singola metrica da trasformare in "storia": il picco virale di TikTok. */
-  tiktokNote: {
-    topPostViews: 302000,
-    totalViews: 403000,
-    text: 'Su TikTok un solo video, «Arrotondamento sempre a favore loro», ha totalizzato 302K delle 403K visualizzazioni del periodo.',
-  },
-
   audience: {
     note: 'Dati demografici letti dagli strumenti ufficiali di ogni piattaforma.',
     instagram: {
@@ -197,9 +192,9 @@ export const creator = {
       },
     ],
     series: [
-      { title: 'Sfida plug-in', text: 'Serie di video in auto con consumi e numeri reali. Puntata 1 uscita il 9 novembre 2026.' },
-      { title: 'Motori in 60 secondi', text: 'Notizie di motori in un minuto, con voce e grafica. Canale YouTube @Motoriin60secondi.', url: 'https://www.youtube.com/@Motoriin60secondi' },
-      { title: 'Supra Fast & Furious', text: 'La Supra DeAgostini costruita pezzo per pezzo: il tipo di contenuto che rappresenta meglio il mio stile.', url: 'https://youtube.com/shorts/Q6yF8Dx-tFA' },
+      { title: 'Sfida plug-in', text: 'Serie di video in auto con consumi e numeri reali. Puntata 1 uscita il 9 novembre 2026.', cover: null as string | null, url: 'https://www.youtube.com/@davidedurazzioff', label: 'Guarda sul canale' },
+      { title: 'Motori in 60 secondi', text: 'Notizie di motori in un minuto, con voce e grafica.', cover: 'images/cover-m60.webp', url: 'https://www.youtube.com/@Motoriin60secondi', label: 'Vai al canale' },
+      { title: 'Supra Fast & Furious', text: 'La Supra DeAgostini costruita pezzo per pezzo: il tipo di contenuto che rappresenta meglio il mio stile.', cover: 'images/cover-supra.webp', url: 'https://youtube.com/shorts/Q6yF8Dx-tFA', label: 'Guarda il video' },
     ],
   },
 
@@ -209,8 +204,8 @@ export const creator = {
       { title: 'TikTok', text: 'Video brevi su motori, tecnologia e gaming.', stat: '403K visualizzazioni · 60 giorni' },
       { title: 'YouTube', text: 'Shorts e serie: Sfida plug-in e Motori in 60 secondi.', stat: '75.075 visualizzazioni · 90 giorni' },
       { title: 'Instagram', text: 'Contenuti per un pubblico italiano e adulto.', stat: '37.315 visualizzazioni · 90 giorni' },
-      { title: 'Twitch', text: 'Diretta ogni martedì alle 21:30.', stat: '' },
       { title: 'davidedurazzi.it', text: 'Il sito: articoli, progetti e media kit.', stat: '636 visitatori · 30 giorni' },
+      { title: 'Twitch', text: 'Diretta ogni martedì alle 21:30.', stat: '' },
     ],
     note: 'Davide non è presente in un solo posto: video brevi, serie, dirette e sito permettono a un brand di entrare in momenti diversi, non in un post isolato.',
   },

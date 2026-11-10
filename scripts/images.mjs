@@ -3,9 +3,11 @@ import sharp from 'sharp';
 const D = '../_drive/', O = 'public/images/';
 const w = (src, out, opts) => sharp(D + src).rotate().resize(opts).webp({ quality: 78 }).toFile(O + out);
 await Promise.all([
-  // Hero: ritratto in auto, quadrato, volto in alto a destra
-  w('01-profilo.jpg', 'davide-hero-640.webp', { width: 640, height: 640 }),
-  w('01-profilo.jpg', 'davide-hero-1000.webp', { width: 1000, height: 1000 }),
+  // Copertine: TikTok più visto (ritaglio dallo screenshot), frame del video Supra, avatar del canale Motori in 60 secondi
+  sharp(D + 'tiktok-migliori.jpg').extract({ left: 159, top: 771, width: 216, height: 287 }).resize(432, 574).webp({ quality: 85 }).toFile(O + 'cover-tiktok-top.webp'),
+  w('supra.jpg', 'cover-supra.webp', { width: 600, height: 800 }),
+  w('m60.jpg', 'cover-m60.webp', { width: 600, height: 600 }),
+  sharp(D + 'logo.png').resize(800, 800).webp({ quality: 90 }).toFile(O + 'logo-800.webp'),
   // Chi è: ritratto verticale 4:5
   w('02-auto.jpg', 'davide-auto-560.webp', { width: 560, height: 700, position: 'attention' }),
   w('02-auto.jpg', 'davide-auto-900.webp', { width: 900, height: 1125, position: 'attention' }),
@@ -14,7 +16,7 @@ await sharp(D + 'logo.png').resize(192, 192).png().toFile(O + 'logo-192.png');
 await sharp(D + 'logo.png').resize(512, 512).png().toFile('public/favicon.png');
 await sharp(D + 'logo.png').resize(180, 180).flatten({ background: '#04060d' }).png().toFile('public/apple-touch-icon.png');
 // Anteprima social 1200x630
-const photo = await sharp(D + '01-profilo.jpg').resize(630, 630).toBuffer();
+const photo = await sharp(D + '01-profilo.jpg').resize(630, 630).toBuffer(); // anteprima social: ritratto
 const svg = `<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
 <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0A1022"/><stop offset="1" stop-color="#04060D"/></linearGradient>
 <linearGradient id="f" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#04060D" stop-opacity="1"/><stop offset="1" stop-color="#04060D" stop-opacity="0"/></linearGradient></defs>

@@ -6,7 +6,8 @@ import { PlatformIcon } from './ui/PlatformIcon';
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
-  const photo = useRef<HTMLDivElement>(null);
+  const rings = useRef<HTMLDivElement>(null);
+  const logo = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
 
   // Luce e leggero parallax che seguono il puntatore: solo con mouse e senza "riduci movimento".
@@ -22,7 +23,8 @@ export function Hero() {
         const y = (e.clientY - r.top) / r.height;
         el.style.setProperty('--mx', `${x * 100}%`);
         el.style.setProperty('--my', `${y * 100}%`);
-        if (photo.current) photo.current.style.transform = `translate3d(${(x - 0.5) * -14}px, ${(y - 0.5) * -10}px, 0)`;
+        if (rings.current) rings.current.style.transform = `translate3d(${(x - 0.5) * 16}px, ${(y - 0.5) * 12}px, 0)`;
+        if (logo.current) logo.current.style.transform = `translate3d(${(x - 0.5) * -10}px, ${(y - 0.5) * -8}px, 0)`;
       });
     };
     el.addEventListener('pointermove', move);
@@ -51,7 +53,7 @@ export function Hero() {
             {creator.hero.headline.map((line, i) => (
               <span key={line} className="block overflow-hidden pb-[0.1em]">
                 <motion.span
-                  className={`block ${i === 1 ? 'serif-i text-blue' : ''}`}
+                  className={`block ${i === 1 ? 'accent-font text-blue' : ''}`}
                   initial={{ y: '108%' }}
                   animate={{ y: 0 }}
                   transition={{ duration: 1, delay: 0.15 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
@@ -88,40 +90,54 @@ export function Hero() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
+          initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
           className="relative mx-auto w-full max-w-[440px] lg:col-span-5 lg:max-w-none"
         >
-          <div ref={photo} className="relative transition-transform duration-300 ease-out will-change-transform">
-            <div className="relative overflow-hidden rounded-[28px] border border-line bg-paper">
+          <div className="relative mx-auto aspect-square w-full max-w-[520px]">
+            {/* Composizione geometrica attorno al logo: solo decorativa */}
+            <div ref={rings} aria-hidden="true" className="absolute inset-0 transition-transform duration-300 ease-out will-change-transform">
+              <svg viewBox="0 0 600 600" className="animate-spin-slow absolute inset-0 h-full w-full" fill="none">
+                <circle cx="300" cy="300" r="290" stroke="#7B97FF" strokeOpacity=".35" strokeDasharray="2 10" strokeWidth="2" strokeLinecap="round" />
+                {[0, 120, 240].map((a) => (
+                  <rect key={a} x="293" y="3" width="14" height="14" fill="#FF8A4C" transform={`rotate(${a} 300 300)`} />
+                ))}
+              </svg>
+              <svg viewBox="0 0 600 600" className="animate-spin-rev absolute inset-0 h-full w-full" fill="none">
+                <polygon points="300,45 521,172 521,428 300,555 79,428 79,172" stroke="#7B97FF" strokeOpacity=".3" strokeWidth="1.5" />
+                {[[300, 45], [521, 172], [521, 428], [300, 555], [79, 428], [79, 172]].map(([x, y]) => (
+                  <circle key={`${x}-${y}`} cx={x} cy={y} r="5" fill="#7B97FF" />
+                ))}
+              </svg>
+              <svg viewBox="0 0 600 600" className="animate-spin-mid absolute inset-0 h-full w-full" fill="none">
+                <circle cx="300" cy="300" r="236" stroke="#1F2848" strokeWidth="1.5" />
+                <circle cx="300" cy="64" r="9" fill="#04060D" stroke="#FF8A4C" strokeWidth="2.5" />
+                <path d="M300 520 l16 -28 h-32 z" fill="none" stroke="#7B97FF" strokeWidth="2" transform="rotate(200 300 300)" />
+              </svg>
+              <svg viewBox="0 0 600 600" className="absolute inset-0 h-full w-full" fill="none">
+                {[0, 90, 180, 270].map((a) => (
+                  <path key={a} d="M300 8 v28" stroke="#7B97FF" strokeOpacity=".6" strokeWidth="2" transform={`rotate(${a} 300 300)`} />
+                ))}
+                <circle cx="300" cy="300" r="188" stroke="#7B97FF" strokeOpacity=".18" strokeWidth="1.5" />
+              </svg>
+            </div>
+            <div ref={logo} className="absolute inset-[17%] transition-transform duration-300 ease-out will-change-transform">
+              <div aria-hidden="true" className="absolute inset-[-8%] rounded-full bg-blue-deep/30 blur-3xl" />
               <img
-                src="images/davide-hero-1000.webp"
-                srcSet="images/davide-hero-640.webp 640w, images/davide-hero-1000.webp 1000w"
-                sizes="(min-width: 1024px) 40vw, 90vw"
-                width={1000}
-                height={1000}
-                alt="Davide Durazzi in auto, di profilo, con occhiali scuri"
+                src="images/logo-800.webp"
+                width={800}
+                height={800}
+                alt="Logo di Davide Durazzi: ritratto stilizzato con occhiali e barba"
                 fetchPriority="high"
-                className="aspect-square w-full object-cover"
+                className="relative h-full w-full rounded-full"
               />
-              <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-bg/70 via-transparent to-scafo/20" />
-              <div aria-hidden="true" className="grid-bg absolute inset-0 opacity-60 mix-blend-overlay" />
-              {['left-3 top-3', 'right-3 top-3 rotate-90', 'right-3 bottom-3 rotate-180', 'left-3 bottom-3 -rotate-90'].map((p) => (
-                <svg key={p} aria-hidden="true" viewBox="0 0 24 24" className={`absolute h-7 w-7 text-blue ${p}`} fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M2 10V2h8" />
-                </svg>
-              ))}
-              <div className="absolute right-4 bottom-4 flex items-center gap-2 rounded-full bg-bg/80 px-3.5 py-2 text-xs font-bold backdrop-blur">
-                <span className="h-2 w-2 animate-pulse-dot rounded-full bg-ok" aria-hidden="true" />
-                Diretta ogni martedì · 21:30
-              </div>
             </div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.0, duration: 0.8 }}
-              className="panel absolute -bottom-7 left-3 max-w-[210px] bg-scafo p-4 backdrop-blur sm:-left-8"
+              className="panel absolute bottom-0 left-0 max-w-[210px] bg-scafo p-4 backdrop-blur sm:-left-6"
             >
               <p className="flex items-center gap-2 text-[11px] font-bold tracking-wider text-muted uppercase">
                 <PlatformIcon id="tiktok" className="h-3.5 w-3.5" /> TikTok · 60 giorni
@@ -133,7 +149,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.15, duration: 0.8 }}
-              className="panel absolute -top-5 right-3 max-w-[190px] bg-scafo p-4 backdrop-blur sm:-right-6"
+              className="panel absolute top-2 right-0 max-w-[190px] bg-scafo p-4 backdrop-blur sm:-right-4"
             >
               <p className="text-3xl font-extrabold tracking-tight text-orange">{ig.value}</p>
               <p className="text-xs leading-snug text-muted">{ig.label}</p>

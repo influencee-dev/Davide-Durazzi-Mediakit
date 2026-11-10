@@ -11,7 +11,7 @@ export function Offers() {
         <SectionHead
           id="collabora-titolo"
           kicker="Collaborazioni"
-          lines={['Come può partecipare', <span key="b" className="serif-i text-blue">il tuo brand.</span>]}
+          lines={['Come può partecipare', <span key="b" className="accent-font text-blue">il tuo brand.</span>]}
           intro="Sei formati, organizzati per obiettivo. Si possono scegliere da soli o combinare in un progetto su misura."
         />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

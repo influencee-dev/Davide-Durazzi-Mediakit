@@ -18,15 +18,23 @@
   --color-ok: #4fd39a;
 
   --font-sans: 'Archivo Variable', ui-sans-serif, system-ui, sans-serif;
-  --font-serif: 'Source Serif 4 Variable', Georgia, serif;
+  --font-accent: 'Space Grotesk Variable', 'Archivo Variable', sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --animate-marquee: marquee 38s linear infinite;
   --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
+  --animate-spin-slow: spin 46s linear infinite;
+  --animate-spin-mid: spin 70s linear infinite;
+  --animate-spin-rev: spin-rev 58s linear infinite;
 
   @keyframes marquee {
     to {
       transform: translate3d(-50%, 0, 0);
+    }
+  }
+  @keyframes spin-rev {
+    to {
+      transform: rotate(-360deg);
     }
   }
   @keyframes pulse-dot {
@@ -98,12 +106,13 @@
     line-height: 1.02;
     font-size: clamp(2rem, 5.2vw, 4rem);
   }
-  .serif-i {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-weight: 400;
+  /* Parole in evidenza nei titoli: grottesco geometrico, non corsivo. */
+  .accent-font {
+    font-family: var(--font-accent);
+    font-style: normal;
+    font-weight: 500;
     font-stretch: 100%;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.035em;
   }
   .kicker {
     @apply flex items-center gap-3 text-[12px] font-bold tracking-[0.16em] text-blue uppercase;
@@ -180,7 +189,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
+  .animate-marquee,
+  .animate-spin-slow,
+  .animate-spin-mid,
+  .animate-spin-rev {
     animation: none !important;
   }
 }
