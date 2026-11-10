@@ -104,6 +104,7 @@ export const creator = {
         source: 'Instagram Insights',
       } as Stat,
       secondary: [],
+      facts: ['Follower più attivi: domenica 21–24, lunedì e sabato 18–21 (CET)'],
     },
     {
       id: 'site',

@@ -13,16 +13,21 @@ function BarRow({ label, value, max = 100, display, accent = 'bg-blue', bare = f
   return (
     <div className={bare ? 'grid grid-cols-[1fr] items-center text-sm' : 'grid grid-cols-[84px_1fr_auto] items-center gap-3 text-sm sm:grid-cols-[110px_1fr_auto]'}>
       {!bare && <span className="truncate text-muted">{label}</span>}
-      <span className="h-2.5 overflow-hidden rounded-full bg-line" aria-hidden="true">
+      {/* Il trigger sta sul contenitore (dimensioni fisse), non sulla barra che parte da scaleX 0 e non verrebbe mai rilevata. */}
+      <motion.span
+        className="h-2.5 overflow-hidden rounded-full bg-line"
+        aria-hidden="true"
+        initial="hide"
+        whileInView="show"
+        viewport={{ once: true, margin: '0px 0px -5% 0px' }}
+      >
         <motion.span
           className={`block h-full origin-left rounded-full ${accent}`}
           style={{ width: `${Math.max((value / max) * 100, 1.5)}%` }}
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
+          variants={{ hide: { scaleX: 0 }, show: { scaleX: 1 } }}
           transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
         />
-      </span>
+      </motion.span>
       {!bare && <span className="min-w-[3.4rem] text-right font-bold tabular-nums">{display ?? fmtPct(value)}</span>}
     </div>
   );
@@ -33,8 +38,8 @@ function Bars({ title, period, rows, accent }: { title: string; period?: string;
     <div>
       <h4 className="text-[13px] font-bold tracking-wider text-muted uppercase">{title}</h4>
       <div className="mt-4 grid gap-3">
-        {rows.map((r, i) => (
-          <BarRow key={r.label} {...r} accent={i === 0 ? accent ?? 'bg-blue' : 'bg-blue/45'} />
+        {rows.map((r) => (
+          <BarRow key={r.label} {...r} accent={r.value === Math.max(...rows.map((x) => x.value)) ? accent ?? 'bg-blue' : 'bg-blue/45'} />
         ))}
       </div>
       {period && <p className="mt-3 text-xs text-muted">{period}</p>}
@@ -85,6 +90,9 @@ export function Numbers() {
                   ))}
                 </dl>
               )}
+              {'facts' in k && k.facts.map((f) => (
+                <p key={f} className="mt-5 border-t border-line pt-4 text-sm leading-snug text-muted">{f}</p>
+              ))}
               <p className="mt-auto pt-5 text-xs text-muted/90">Fonte: {k.stat.source}{k.stat.approximate ? ' · valore arrotondato dalla piattaforma' : ''}</p>
             </Reveal>
           ))}

@@ -2,6 +2,7 @@ import { MotionConfig } from 'motion/react';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Ecosystem } from './components/Ecosystem';
+import { Floaters } from './components/ui/Floaters';
 import { Experience } from './components/Experience';
 import { Hero } from './components/Hero';
 import { Navbar } from './components/Navbar';
@@ -15,6 +16,7 @@ export default function App() {
       <a href="#main" className="skip-link">
         Vai al contenuto
       </a>
+      <Floaters />
       <Navbar />
       <main id="main">
         <Hero />
