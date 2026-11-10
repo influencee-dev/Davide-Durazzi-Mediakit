@@ -1,4 +1,5 @@
 import { MotionConfig } from 'motion/react';
+import { Advantage } from './components/Advantage';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Ecosystem } from './components/Ecosystem';
@@ -21,6 +22,7 @@ export default function App() {
       <main id="main">
         <Hero />
         <Numbers />
+        <Advantage />
         <About />
         <World />
         <Ecosystem />

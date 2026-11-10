@@ -4,6 +4,7 @@ import { mailto } from '../lib/format';
 
 const LINKS = [
   { href: '#numeri', label: 'Numeri' },
+  { href: '#vantaggio', label: 'Perché Davide' },
   { href: '#chi-e', label: 'Chi è' },
   { href: '#mondo', label: 'Ambiti' },
   { href: '#collabora', label: 'Collaborazioni' },

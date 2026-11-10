@@ -199,7 +199,44 @@ export const creator = {
     ],
   },
 
-  /** Canali attivi, solo con dati presenti nella cartella Drive. */
+    /** Vantaggio competitivo: ogni punto si regge su dati della cartella Drive o sulla call. */
+  advantage: {
+    intro:
+      'Un brand sceglie un creator per la fiducia che ha con il pubblico. Quella di Davide si regge su quattro elementi, tutti verificabili.',
+    points: [
+      {
+        title: 'Prova e costruisce in prima persona',
+        stat: { value: 3, format: 'int' as const, label: 'progetti propri realizzati' },
+        text: 'Ricordati, un’app Android; Il Sistema, un videogioco; Samaritan, un agente AI. Quando prova un prodotto, parla da chi la tecnologia la usa e la costruisce.',
+        proof: 'Fonte: documento di Davide e call del 10 novembre 2026.',
+      },
+      {
+        title: 'Arriva a persone nuove',
+        stat: { value: 322300, format: 'short' as const, label: 'nuovi spettatori su 325,8K totali · TikTok, 60 giorni' },
+        text: 'Quasi tutto il pubblico TikTok del periodo non lo aveva mai visto prima, e il 97,7% delle visualizzazioni arriva dalla pagina «Per te»: i contenuti viaggiano oltre i follower.',
+        proof: 'Fonte: TikTok Studio, 10 set – 8 nov 2026.',
+      },
+      {
+        title: 'Un pubblico adulto e italiano',
+        stat: { value: 91.2, format: 'pct' as const, label: 'del pubblico Instagram è in Italia' },
+        text: 'Oltre l’80% ha tra i 25 e i 54 anni e il 77,7% è maschile: un’audience adatta a brand di tecnologia, gaming e motori.',
+        proof: 'Fonte: Instagram Insights, 90 giorni al 8 nov 2026.',
+      },
+      {
+        title: 'Voce propria, brief condiviso',
+        checks: [
+          'Si parte da un brief concordato',
+          'Il contenuto lo sviluppa Davide, con il suo linguaggio',
+          'Ogni sponsorizzato è dichiarato',
+          'L’AI supporta il lavoro: le scelte editoriali restano sue',
+        ],
+        text: 'Per il pubblico è la garanzia che il messaggio del brand arrivi da una persona vera, non da un testo letto.',
+      },
+    ],
+    closing: 'Tecnologia, AI, gaming e motori, raccontati da chi li prova davvero. Dimmi che cosa vuoi comunicare e ti propongo come.',
+  },
+
+/** Canali attivi, solo con dati presenti nella cartella Drive. */
   ecosystem: {
     steps: [
       { title: 'TikTok', text: 'Video brevi su motori, tecnologia e gaming.', stat: '403K visualizzazioni · 60 giorni' },
