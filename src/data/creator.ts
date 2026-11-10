@@ -202,7 +202,7 @@ export const creator = {
     /** Vantaggio competitivo: ogni punto si regge su dati della cartella Drive o sulla call. */
   advantage: {
     intro:
-      'Un brand sceglie un creator per la fiducia che ha con il pubblico. Quella di Davide si regge su quattro elementi, tutti verificabili.',
+      'Un brand sceglie un creator per la fiducia che ha con il pubblico. Quella di Davide si regge su cinque elementi.',
     points: [
       {
         title: 'Prova e costruisce in prima persona',
@@ -231,6 +231,17 @@ export const creator = {
           'L’AI supporta il lavoro: le scelte editoriali restano sue',
         ],
         text: 'Per il pubblico è la garanzia che il messaggio del brand arrivi da una persona vera, non da un testo letto.',
+      },
+      {
+        title: 'Scalabile, senza perdere la mano',
+        wide: true,
+        checks: [
+          'Automatizza i processi ripetitivi con strumenti e agenti AI sviluppati da lui, come Samaritan',
+          'Presidia più canali: TikTok, YouTube, Instagram, Twitch e il sito',
+          'Un progetto può crescere o ripetersi nel tempo senza ripartire da zero',
+          'La tecnologia supporta il lavoro: creatività e decisioni restano di Davide',
+        ],
+        text: 'Per un brand significa poter partire con un singolo formato e allargare la collaborazione quando serve, mantenendo la stessa qualità e la stessa voce.',
       },
     ],
     closing: 'Tecnologia, AI, gaming e motori, raccontati da chi li prova davvero. Dimmi che cosa vuoi comunicare e ti propongo come.',

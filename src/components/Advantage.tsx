@@ -20,7 +20,7 @@ export function Advantage() {
 
         <div className="grid gap-4 md:grid-cols-2">
           {a.points.map((p, i) => (
-            <Reveal key={p.title} delay={(i % 2) * 0.1} className="panel panel-hover flex flex-col p-7 sm:p-9">
+            <Reveal key={p.title} delay={(i % 2) * 0.1} className={`panel panel-hover flex flex-col p-7 sm:p-9 ${'wide' in p && p.wide ? 'md:col-span-2' : ''}`}>
               <p className="text-sm font-bold text-orange">0{i + 1}</p>
               <h3 className="mt-3 text-2xl font-extrabold tracking-tight">{p.title}</h3>
               {'stat' in p && p.stat ? (
@@ -31,7 +31,7 @@ export function Advantage() {
                   <p className="max-w-[16rem] pb-1 font-semibold leading-snug">{p.stat.label}</p>
                 </div>
               ) : (
-                <ul className="mt-6 grid gap-2.5">
+                <ul className={`mt-6 grid gap-2.5 ${'wide' in p && p.wide ? 'md:grid-cols-2 md:gap-x-10' : ''}`}>
                   {'checks' in p &&
                     p.checks.map((c) => (
                       <li key={c} className="flex items-start gap-3 font-semibold">
