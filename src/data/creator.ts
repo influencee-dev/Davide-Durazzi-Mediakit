@@ -199,47 +199,41 @@ export const creator = {
     ],
   },
 
-    /** Vantaggio competitivo: ogni punto si regge su dati della cartella Drive o sulla call. */
+    /** Vantaggio competitivo (prove) + versatilità editoriale: la "scalabilità" di Davide è comunicativa, non una promessa di audience o risultati. */
   advantage: {
     intro:
-      'Un brand sceglie un creator per la fiducia che ha con il pubblico. Quella di Davide si regge su quattro elementi, tutti verificabili.',
+      'Davide fa ciò di cui parla e sa cambiare linguaggio a seconda di chi ha davanti: tecnologia, AI, gaming e motori, senza essere legato a una sola nicchia. «Sono scalabile», dice lui.',
     points: [
       {
-        title: 'Prova e costruisce in prima persona',
+        title: 'Prova e costruisce',
         stat: { value: 3, format: 'int' as const, label: 'progetti propri realizzati' },
-        text: 'Ricordati, un’app Android; Il Sistema, un videogioco; Samaritan, un agente AI. Quando prova un prodotto, parla da chi la tecnologia la usa e la costruisce.',
-        proof: 'Fonte: documento di Davide e call del 10 novembre 2026.',
+        text: 'App Android, videogioco e agente AI: parla di tecnologia da chi la usa.',
+        proof: 'Documento di Davide e call, 10 nov 2026',
       },
       {
         title: 'Arriva a persone nuove',
-        stat: { value: 322300, format: 'short' as const, label: 'nuovi spettatori su 325,8K totali · TikTok, 60 giorni' },
-        text: 'Quasi tutto il pubblico TikTok del periodo non lo aveva mai visto prima, e il 97,7% delle visualizzazioni arriva dalla pagina «Per te»: i contenuti viaggiano oltre i follower.',
-        proof: 'Fonte: TikTok Studio, 10 set – 8 nov 2026.',
+        stat: { value: 322300, format: 'short' as const, label: 'nuovi spettatori su 325,8K · TikTok' },
+        text: 'Il 97,7% delle visualizzazioni arriva da «Per te»: i contenuti viaggiano oltre i follower.',
+        proof: 'TikTok Studio, 60 giorni al 8 nov 2026',
       },
       {
-        title: 'Un pubblico adulto e italiano',
+        title: 'Pubblico adulto e italiano',
         stat: { value: 91.2, format: 'pct' as const, label: 'del pubblico Instagram è in Italia' },
-        text: 'Oltre l’80% ha tra i 25 e i 54 anni e il 77,7% è maschile: un’audience adatta a brand di tecnologia, gaming e motori.',
-        proof: 'Fonte: Instagram Insights, 90 giorni al 8 nov 2026.',
+        text: 'Oltre l’80% ha tra i 25 e i 54 anni, il 77,7% è maschile.',
+        proof: 'Instagram Insights, 90 giorni al 8 nov 2026',
       },
       {
         title: 'Voce propria, brief condiviso',
-        checks: [
-          'Si parte da un brief concordato',
-          'Il contenuto lo sviluppa Davide, con il suo linguaggio',
-          'Ogni sponsorizzato è dichiarato',
-          'L’AI supporta il lavoro: le scelte editoriali restano sue',
-        ],
-        text: 'Per il pubblico è la garanzia che il messaggio del brand arrivi da una persona vera, non da un testo letto.',
+        checks: ['Brief concordato', 'Contenuto sviluppato da Davide', 'Sponsorizzato sempre dichiarato'],
+        text: 'L’AI supporta il lavoro: le scelte editoriali restano sue.',
       },
     ],
-    closing: 'Tecnologia, AI, gaming e motori, raccontati da chi li prova davvero. Dimmi che cosa vuoi comunicare e ti propongo come.',
+    chips: ['Target diversi', 'Settori complementari', 'Formati diversi', 'Storytelling su misura'],
+    tagline: 'Un creator, più linguaggi, pubblici differenti.',
+    note: 'È versatilità editoriale e comunicativa: i pubblici dei settori non coincidono, e ogni collaborazione si costruisce sul pubblico giusto per il tuo progetto.',
   },
 
-  /** Scalabilità = versatilità editoriale e comunicativa (call del 10 nov 2026): non una promessa di audience o risultati. */
   versatility: {
-    intro:
-      'Davide non è legato a una sola nicchia o a un solo linguaggio. Si muove tra tecnologia, intelligenza artificiale, gaming e motori e adatta stile e profondità alle persone a cui parla. Lo dice lui stesso: «Sono scalabile».',
     sectors: [
       {
         id: 'tecnologia',
@@ -278,14 +272,6 @@ export const creator = {
         collab: 'Video su brief concordato, con linguaggio sviluppato da Davide.',
       },
     ],
-    adapts: [
-      { title: 'Target diversi', text: 'Modula linguaggio, approccio e profondità dei contenuti in base a chi ascolta.' },
-      { title: 'Settori complementari', text: 'Tech, AI, gaming e automotive: collaborazioni in mondi vicini, senza risultare estraneo al contesto.' },
-      { title: 'Formati diversi', text: 'Dall’approfondimento tecnico all’intrattenimento, dal video dimostrativo alla diretta.' },
-      { title: 'Storytelling su misura', text: 'Il contenuto nasce da prodotto, pubblico e obiettivi, mantenendo la sua autenticità.' },
-    ],
-    tagline: 'Un creator, più linguaggi, pubblici differenti.',
-    note: 'È versatilità editoriale e comunicativa: i pubblici dei vari settori non coincidono, e una collaborazione si costruisce insieme sul pubblico giusto per il tuo progetto.',
   },
 
   /** Canali attivi, solo con dati presenti nella cartella Drive. */
