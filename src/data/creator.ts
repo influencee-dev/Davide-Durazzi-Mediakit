@@ -103,7 +103,7 @@ export const creator = {
         period: '11 ago – 8 nov 2026 (90 giorni)',
         source: 'Instagram Insights',
       } as Stat,
-      secondary: [],
+      secondary: [{ value: 698, label: 'follower', note: 'Profilo Instagram, screenshot fornito da Davide, 10 nov 2026' }],
       facts: ['Follower più attivi: domenica 21–24, lunedì e sabato 18–21 (CET)'],
     },
     {

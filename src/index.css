@@ -32,21 +32,6 @@
       transform: translate3d(-50%, 0, 0);
     }
   }
-  @keyframes wander-a {
-    0% { transform: translate3d(0, 0, 0) rotate(0deg); }
-    50% { transform: translate3d(70px, -90px, 0) rotate(180deg); }
-    100% { transform: translate3d(-40px, 60px, 0) rotate(360deg); }
-  }
-  @keyframes wander-b {
-    0% { transform: translate3d(0, 0, 0) rotate(0deg); }
-    50% { transform: translate3d(-90px, 70px, 0) rotate(-140deg); }
-    100% { transform: translate3d(50px, -50px, 0) rotate(-360deg); }
-  }
-  @keyframes wander-c {
-    0% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
-    50% { transform: translate3d(60px, 80px, 0) rotate(90deg) scale(1.25); }
-    100% { transform: translate3d(-70px, -40px, 0) rotate(200deg) scale(0.9); }
-  }
   @keyframes spin-rev {
     to {
       transform: rotate(-360deg);
@@ -185,6 +170,23 @@
       linear-gradient(90deg, rgb(150 170 255 / 0.07) 1px, transparent 1px);
     background-size: 56px 56px;
   }
+}
+
+/* Keyframes fuori da @theme: Tailwind elimina quelli non legati a una variabile --animate-*. */
+@keyframes wander-a {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(70px, -90px, 0) rotate(180deg); }
+  100% { transform: translate3d(-40px, 60px, 0) rotate(360deg); }
+}
+@keyframes wander-b {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(-90px, 70px, 0) rotate(-140deg); }
+  100% { transform: translate3d(50px, -50px, 0) rotate(-360deg); }
+}
+@keyframes wander-c {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  50% { transform: translate3d(60px, 80px, 0) rotate(90deg) scale(1.25); }
+  100% { transform: translate3d(-70px, -40px, 0) rotate(200deg) scale(0.9); }
 }
 
 .floater { animation-timing-function: ease-in-out; animation-iteration-count: infinite; animation-direction: alternate; will-change: transform; }
