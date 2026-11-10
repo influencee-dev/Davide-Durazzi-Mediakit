@@ -202,7 +202,7 @@ export const creator = {
     /** Vantaggio competitivo: ogni punto si regge su dati della cartella Drive o sulla call. */
   advantage: {
     intro:
-      'Un brand sceglie un creator per la fiducia che ha con il pubblico. Quella di Davide si regge su cinque elementi.',
+      'Un brand sceglie un creator per la fiducia che ha con il pubblico. Quella di Davide si regge su quattro elementi, tutti verificabili.',
     points: [
       {
         title: 'Prova e costruisce in prima persona',
@@ -232,22 +232,63 @@ export const creator = {
         ],
         text: 'Per il pubblico è la garanzia che il messaggio del brand arrivi da una persona vera, non da un testo letto.',
       },
-      {
-        title: 'Scalabile, senza perdere la mano',
-        wide: true,
-        checks: [
-          'Automatizza i processi ripetitivi con strumenti e agenti AI sviluppati da lui, come Samaritan',
-          'Presidia più canali: TikTok, YouTube, Instagram, Twitch e il sito',
-          'Un progetto può crescere o ripetersi nel tempo senza ripartire da zero',
-          'La tecnologia supporta il lavoro: creatività e decisioni restano di Davide',
-        ],
-        text: 'Per un brand significa poter partire con un singolo formato e allargare la collaborazione quando serve, mantenendo la stessa qualità e la stessa voce.',
-      },
     ],
     closing: 'Tecnologia, AI, gaming e motori, raccontati da chi li prova davvero. Dimmi che cosa vuoi comunicare e ti propongo come.',
   },
 
-/** Canali attivi, solo con dati presenti nella cartella Drive. */
+  /** Scalabilità = versatilità editoriale e comunicativa (call del 10 nov 2026): non una promessa di audience o risultati. */
+  versatility: {
+    intro:
+      'Davide non è legato a una sola nicchia o a un solo linguaggio. Si muove tra tecnologia, intelligenza artificiale, gaming e motori e adatta stile e profondità alle persone a cui parla. Lo dice lui stesso: «Sono scalabile».',
+    sectors: [
+      {
+        id: 'tecnologia',
+        label: 'Tecnologia',
+        short: 'Tecnologia',
+        language: 'Pratico e concreto: dagli strumenti digitali alle applicazioni reali.',
+        format: 'Approfondimento tecnico',
+        example: 'Ricordati, l’app Android realizzata da Davide.',
+        collab: 'Presentazione pratica di un prodotto o di un servizio.',
+      },
+      {
+        id: 'ai',
+        label: 'Intelligenza artificiale',
+        short: 'AI',
+        language: 'Tecnico e sperimentale: prova gli strumenti e li usa per costruire.',
+        format: 'Approfondimento e progetti dimostrativi',
+        example: 'Samaritan, l’agente AI per l’automazione editoriale.',
+        collab: 'Prova e racconto di uno strumento, con casi d’uso veri.',
+      },
+      {
+        id: 'gaming',
+        label: 'Gaming',
+        short: 'Gaming',
+        language: 'Intrattenimento e conversazione: novità, prove e chiacchiere con la community.',
+        format: 'Conversazione in diretta',
+        example: 'La diretta su Twitch ogni martedì alle 21:30.',
+        collab: 'Prova in diretta, con le domande della chat.',
+      },
+      {
+        id: 'motori',
+        label: 'Motori e automotive',
+        short: 'Motori',
+        language: 'Dimostrativo e appassionato: auto, prove e tecnologia a bordo.',
+        format: 'Video dimostrativo',
+        example: 'Fari Matrix LED Audi A3: 46K visualizzazioni su TikTok (60 giorni al 8 nov 2026).',
+        collab: 'Video su brief concordato, con linguaggio sviluppato da Davide.',
+      },
+    ],
+    adapts: [
+      { title: 'Target diversi', text: 'Modula linguaggio, approccio e profondità dei contenuti in base a chi ascolta.' },
+      { title: 'Settori complementari', text: 'Tech, AI, gaming e automotive: collaborazioni in mondi vicini, senza risultare estraneo al contesto.' },
+      { title: 'Formati diversi', text: 'Dall’approfondimento tecnico all’intrattenimento, dal video dimostrativo alla diretta.' },
+      { title: 'Storytelling su misura', text: 'Il contenuto nasce da prodotto, pubblico e obiettivi, mantenendo la sua autenticità.' },
+    ],
+    tagline: 'Un creator, più linguaggi, pubblici differenti.',
+    note: 'È versatilità editoriale e comunicativa: i pubblici dei vari settori non coincidono, e una collaborazione si costruisce insieme sul pubblico giusto per il tuo progetto.',
+  },
+
+  /** Canali attivi, solo con dati presenti nella cartella Drive. */
   ecosystem: {
     steps: [
       { title: 'TikTok', text: 'Video brevi su motori, tecnologia e gaming.', stat: '403K visualizzazioni · 60 giorni' },
