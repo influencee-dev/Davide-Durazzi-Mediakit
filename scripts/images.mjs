@@ -11,8 +11,9 @@ await Promise.all([
   sharp(D + 'sfida-oar2.jpg').extract({ left: 0, top: 500, width: 1080, height: 810 }).resize(800, 600).webp({ quality: 82 }).toFile(O + 'cover-sfida.webp'),
   sharp(D + 'logo.png').resize(800, 800).webp({ quality: 90 }).toFile(O + 'logo-800.webp'),
   // Chi è: Davide che ride nella piscina di palline, 4:5
-  w('03-piscina.jpg', 'davide-chi-e-560.webp', { width: 560, height: 700, position: 'top' }),
-  w('03-piscina.jpg', 'davide-chi-e-900.webp', { width: 900, height: 1125, position: 'top' }),
+  // versione ad alta risoluzione (1254x1254): ritaglio 4:5 centrato sul volto
+  sharp(D + 'piscina-hd.webp').extract({ left: 100, top: 0, width: 1003, height: 1254 }).resize(560, 700).webp({ quality: 80 }).toFile(O + 'davide-chi-e-560.webp'),
+  sharp(D + 'piscina-hd.webp').extract({ left: 100, top: 0, width: 1003, height: 1254 }).resize(900, 1125).webp({ quality: 80 }).toFile(O + 'davide-chi-e-900.webp'),
 ]);
 await sharp(D + 'logo.png').resize(192, 192).png().toFile(O + 'logo-192.png');
 await sharp(D + 'logo.png').resize(512, 512).png().toFile('public/favicon.png');
