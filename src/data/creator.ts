@@ -180,8 +180,8 @@ export const creator = {
 
   /** Contenuti con le performance misurate dalle piattaforme. */
   topContent: [
-    { platform: 'tiktok', title: '«Arrotondamento sempre a favore loro»', views: 302000, note: 'TikTok, ultimi 60 giorni al 8 nov 2026', url: 'https://www.tiktok.com/@davidedurazzi' },
-    { platform: 'tiktok', title: 'Fari Matrix LED Audi A3', views: 46000, note: 'TikTok, ultimi 60 giorni al 8 nov 2026', url: 'https://www.tiktok.com/@davidedurazzi' },
+    { platform: 'tiktok', title: '«Arrotondamento sempre a favore loro»', views: 302000, note: 'TikTok, ultimi 60 giorni al 8 nov 2026', url: 'https://vm.tiktok.com/ZN8PH6m43/' },
+    { platform: 'tiktok', title: 'Fari Matrix LED Audi A3', views: 46000, note: 'TikTok, ultimi 60 giorni al 8 nov 2026', url: 'https://vm.tiktok.com/ZN8PH8FYt/' },
     { platform: 'youtube', title: 'Audi TT RS', views: 19995, note: 'YouTube Short', url: 'https://youtube.com/shorts/T5V2HeMbvQo' },
     { platform: 'youtube', title: 'Lamborghini Huracán sullo sterrato', views: 12972, note: 'YouTube Short', url: 'https://youtube.com/shorts/RzIU3BO9_xI' },
     { platform: 'youtube', title: 'Audi RS, quale ho scelto?', views: 12965, note: 'YouTube Short', url: 'https://youtube.com/shorts/3V0tH8tnqFU' },
