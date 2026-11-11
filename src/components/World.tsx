@@ -48,7 +48,7 @@ export function World() {
           id="mondo-titolo"
           kicker="Il mio mondo"
           lines={['Un solo filo:', <span key="b" className="accent-font text-blue">provare la tecnologia.</span>]}
-          intro="Intelligenza artificiale, gaming e motori non sono quattro canali separati: sono tre modi di guardare la stessa cosa, la tecnologia applicata a ciò che le persone usano e amano."
+          intro="Intelligenza artificiale, gaming e motori non sono tre canali separati: sono tre modi di guardare la stessa cosa, la tecnologia applicata a ciò che le persone usano e amano."
         />
         <Graph />
         <div className="mt-6 grid gap-4 md:mt-2 md:grid-cols-3">
