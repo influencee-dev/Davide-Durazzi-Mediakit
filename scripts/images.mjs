@@ -7,6 +7,7 @@ await Promise.all([
   sharp(D + 'tiktok-migliori.jpg').extract({ left: 159, top: 771, width: 216, height: 287 }).resize(432, 574).webp({ quality: 85 }).toFile(O + 'cover-tiktok-top.webp'),
   w('supra.jpg', 'cover-supra.webp', { width: 600, height: 800 }),
   w('m60.jpg', 'cover-m60.webp', { width: 600, height: 600 }),
+  w('sfida-oar2.jpg', 'cover-sfida.webp', { width: 600, height: 800, position: 'top' }), // Sfida plug-in, puntata 1 (miniatura YouTube)
   sharp(D + 'logo.png').resize(800, 800).webp({ quality: 90 }).toFile(O + 'logo-800.webp'),
   // Chi è: Davide che ride nella piscina di palline, 4:5
   w('03-piscina.jpg', 'davide-chi-e-560.webp', { width: 560, height: 700, position: 'top' }),

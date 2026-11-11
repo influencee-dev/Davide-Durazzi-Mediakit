@@ -104,10 +104,11 @@ export function Numbers() {
             <h3 className="text-2xl font-extrabold tracking-tight">Chi guarda i contenuti</h3>
             <p className="mt-2 text-muted">{a.note}</p>
             <div className="mt-8 grid gap-10 sm:grid-cols-2">
-              <Bars title="Instagram · età" rows={a.instagram.ages} />
+              <Bars title="Follower Instagram · età" rows={a.instagram.ages} />
               <div className="grid content-start gap-10">
-                <Bars title="Instagram · genere" rows={a.instagram.gender} accent="bg-orange" />
-                <Bars title="Instagram · paesi" rows={a.instagram.countries.slice(0, 3)} />
+                <Bars title="Follower Instagram · genere" rows={a.instagram.gender} accent="bg-orange" />
+                <Bars title="Follower Instagram · paesi" rows={a.instagram.countries.slice(0, 3)} />
+                <Bars title="Follower Instagram · città" rows={a.instagram.cities.slice(0, 3)} />
               </div>
             </div>
             <p className="mt-6 text-xs text-muted">{a.instagram.period}</p>

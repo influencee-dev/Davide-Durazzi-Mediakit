@@ -92,6 +92,9 @@ export const creator = {
       secondary: [
         { value: 814, label: 'iscritti', note: 'Documento di Davide, 10 nov 2026' },
         { value: 7556, label: 'pubblico mensile', note: 'YouTube Studio, ultimi 28 giorni al 8 nov 2026' },
+        { value: 1124, label: 'mi piace · 90 giorni', note: 'YouTube Studio' },
+        { value: 17, label: 'commenti · 90 giorni', note: 'YouTube Studio' },
+        { value: 28, label: 'condivisioni · 90 giorni', note: 'YouTube Studio' },
       ],
     },
     {
@@ -103,8 +106,16 @@ export const creator = {
         period: '11 ago – 8 nov 2026 (90 giorni)',
         source: 'Instagram Insights',
       } as Stat,
-      secondary: [{ value: 698, label: 'follower', note: 'Profilo Instagram, screenshot fornito da Davide, 10 nov 2026' }],
-      facts: ['Follower più attivi: domenica 21–24, lunedì e sabato 18–21 (CET)'],
+      secondary: [
+        { value: 698, label: 'follower', note: 'Instagram Insights, 10 nov 2026' },
+        { value: 32, label: 'reel pubblicati · 30 giorni', note: 'Instagram Insights, 11 ott – 10 nov 2026' },
+        { value: 9629, label: 'account che hanno visto i reel · 30 giorni', note: 'Instagram Insights, 11 ott – 10 nov 2026' },
+        { value: 652, label: 'interazioni · 30 giorni', note: 'Instagram Insights, 11 ott – 10 nov 2026' },
+      ],
+      facts: [
+        'Interazioni (11 ott – 10 nov): 539 mi piace, 44 commenti, 43 condivisioni, 19 salvataggi, 7 repost.',
+        'Follower più attivi: domenica 21–24, lunedì e sabato 18–21 (CET).',
+      ],
     },
     {
       id: 'site',
@@ -122,19 +133,19 @@ export const creator = {
   audience: {
     note: 'Dati demografici letti dagli strumenti ufficiali di ogni piattaforma.',
     instagram: {
-      period: 'Instagram Insights, 90 giorni al 8 nov 2026',
+      period: 'Follower Instagram (698), Instagram Insights, 11 ott – 10 nov 2026',
       gender: [
         { label: 'Uomini', value: 77.7 },
         { label: 'Donne', value: 22.3 },
       ] as Bar[],
       ages: [
-        { label: '13–17', value: 1.1 },
-        { label: '18–24', value: 7.4 },
-        { label: '25–34', value: 28.7 },
-        { label: '35–44', value: 33.5 },
-        { label: '45–54', value: 20.8 },
-        { label: '55–64', value: 7.2 },
-        { label: '65+', value: 1.3 },
+        { label: '13–17', value: 1.7 },
+        { label: '18–24', value: 12.2 },
+        { label: '25–34', value: 31.5 },
+        { label: '35–44', value: 29.4 },
+        { label: '45–54', value: 17.5 },
+        { label: '55–64', value: 6.3 },
+        { label: '65+', value: 1.4 },
       ] as Bar[],
       countries: [
         { label: 'Italia', value: 91.2 },
@@ -142,6 +153,13 @@ export const creator = {
         { label: 'Germania', value: 0.9 },
         { label: 'Indonesia', value: 0.8 },
         { label: 'Nigeria', value: 0.8 },
+      ] as Bar[],
+      cities: [
+        { label: 'Roma', value: 57.7 },
+        { label: 'Fonte Nuova', value: 5.7 },
+        { label: 'Milano', value: 2.0 },
+        { label: 'Napoli', value: 2.0 },
+        { label: 'Tivoli', value: 1.4 },
       ] as Bar[],
     },
     tiktok: {
@@ -154,8 +172,8 @@ export const creator = {
     },
     /** Dati chiave letti (non calcolati altrove). 25–54 anni = 28,7 + 33,5 + 20,8 = 83,0 */
     insights: [
-      { value: '91%', label: 'del pubblico Instagram è in Italia' },
-      { value: '80%+', label: 'ha tra i 25 e i 54 anni (Instagram)' },
+      { value: '91%', label: 'dei follower Instagram è in Italia' },
+      { value: '78%', label: 'dei follower Instagram ha tra i 25 e i 54 anni' },
       { value: '70%', label: 'del pubblico TikTok è maschile' },
     ],
   },
@@ -193,7 +211,7 @@ export const creator = {
       },
     ],
     series: [
-      { title: 'Sfida plug-in', text: 'Serie di video in auto con consumi e numeri reali. Puntata 1 uscita il 9 novembre 2026.', cover: null as string | null, url: 'https://www.youtube.com/@davidedurazzioff', label: 'Guarda sul canale' },
+      { title: 'Sfida plug-in', text: 'Serie di video in auto con consumi e numeri reali. Puntata 1 uscita il 9 novembre 2026.', cover: 'images/cover-sfida.webp', url: 'https://www.youtube.com/shorts/Lhs9tdy_8qk', label: 'Guarda la puntata 1' },
       { title: 'Motori in 60 secondi', text: 'Notizie di motori in un minuto, con voce e grafica.', cover: 'images/cover-m60.webp', url: 'https://www.youtube.com/@Motoriin60secondi', label: 'Vai al canale' },
       { title: 'Supra Fast & Furious', text: 'La Supra DeAgostini costruita pezzo per pezzo: il tipo di contenuto che rappresenta meglio il mio stile.', cover: 'images/cover-supra.webp', url: 'https://youtube.com/shorts/Q6yF8Dx-tFA', label: 'Guarda il video' },
     ],
@@ -218,9 +236,9 @@ export const creator = {
       },
       {
         title: 'Pubblico adulto e italiano',
-        stat: { value: 91.2, format: 'pct' as const, label: 'del pubblico Instagram è in Italia' },
-        text: 'Oltre l’80% ha tra i 25 e i 54 anni, il 77,7% è maschile.',
-        proof: 'Instagram Insights, 90 giorni al 8 nov 2026',
+        stat: { value: 91.2, format: 'pct' as const, label: 'dei follower Instagram è in Italia' },
+        text: 'Il 78,4% ha tra i 25 e i 54 anni, il 77,7% è maschile; il 57,7% è di Roma.',
+        proof: 'Instagram Insights, 11 ott – 10 nov 2026',
       },
       {
         title: 'Voce propria, brief condiviso',
@@ -314,7 +332,7 @@ export const creator = {
     {
       goal: 'Contenuto video',
       title: 'Video su brief concordato',
-      text: 'Un contenuto video costruito su un brief condiviso, con linguaggio e sviluppo curati da Davide. Già realizzato per Vcase.',
+      text: 'Un contenuto video costruito su un brief condiviso, con linguaggio e sviluppo curati da Davide. Già realizzato per WhoKeys.',
       channels: ['Video'],
     },
     {
@@ -328,7 +346,8 @@ export const creator = {
 
   experience: {
     collab: {
-      brand: 'Vcase',
+      brand: 'WhoKeys',
+      url: 'https://www.instagram.com/reel/DYlcDuPIOGJ/',
       kind: 'Collaborazione retribuita · una tantum',
       text: 'Video promozionale realizzato su richiesta del brand, seguendo il brief e il processo di produzione concordati.',
     },

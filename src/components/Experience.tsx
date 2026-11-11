@@ -20,7 +20,11 @@ export function Experience() {
             <h3 className="mt-6 text-5xl font-extrabold tracking-tight sm:text-6xl">{x.collab.brand}</h3>
             <p className="mt-2 font-semibold text-orange">{x.collab.kind}</p>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted">{x.collab.text}</p>
-            <p className="mt-6 max-w-lg text-sm text-muted">Esperienza passata, conclusa. Per ora non sono pubblicati risultati di campagna.</p>
+            <a href={x.collab.url} target="_blank" rel="noopener noreferrer" className="btn btn-ghost mt-7">
+              Guarda il contenuto su Instagram <span aria-hidden="true">↗</span>
+              <span className="sr-only"> (si apre in una nuova scheda)</span>
+            </a>
+            <p className="mt-5 max-w-lg text-sm text-muted">Esperienza passata, conclusa. Per ora non sono pubblicati risultati di campagna.</p>
           </Reveal>
 
           <Reveal delay={0.1} className="panel border-dashed p-8 lg:col-span-5">
